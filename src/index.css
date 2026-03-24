@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  /* Muted Elegance Palette */
+  --color-paper: #F5F2ED;
+  --color-dark: #2C2C2A;
+  --color-accent: #D9C5B2;
+  --color-muted: #A99F96;
+  --color-blue-gray: #C5CCD3;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-dark font-sans antialiased selection:bg-accent selection:text-dark;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wider uppercase;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+  .glass-dark {
+    @apply bg-dark/80 backdrop-blur-xl border border-white/5;
+  }
+}
